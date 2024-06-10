@@ -57,3 +57,12 @@
     @apply bg-background text-foreground;
   }
 }
+
+.no_scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no_scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
