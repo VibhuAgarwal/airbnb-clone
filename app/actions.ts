@@ -44,3 +44,7 @@ export async function createCategoryPage(formData: FormData) {
   });
   return redirect(`/create/${homeId}/description`);
 }
+
+export async function CreateDescription(formData: FormData) {
+  
+}
