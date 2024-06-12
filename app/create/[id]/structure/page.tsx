@@ -25,7 +25,7 @@ export default function StructureRoute({ params }: { params: { id: string } }) {
             >
               <Link href="/">Cancel</Link>
             </Button>
-            <Button size="lg">Save</Button>
+            <CreationSubmit />
           </div>
         </div>
       </form>
