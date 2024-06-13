@@ -19,22 +19,24 @@ export function ListingCard({
   const country = getCountryByValue(location);
   return (
     <div className="flex flex-col">
-      <div className="relative h-72">
+      <div className="relative h-72 mt-8">
         <Image
           src={`https://aushouajbtaovubjfkam.supabase.co/storage/v1/object/public/images/${imagePath}`}
           alt="Image of house"
           fill
-          className="rounded-lg h-full object-cover mb-3"
+          className="rounded-lg h-full object-cover"
         />
       </div>
-      <Link href={"/"}>
+      <Link href={"/"} className="mt-2">
         <h3 className="font-medium text-base ">
           {country?.flag} {country?.label} / {country?.region}
         </h3>
         <p className="text-muted-foreground text-sm line-clamp-2">
           {description}
         </p>
-        <p>${price}/Night</p>
+        <p className="pt-2 text-muted-foreground">
+          <span className="font-medium text-black">${price}</span>/Night
+        </p>
       </Link>
     </div>
   );
