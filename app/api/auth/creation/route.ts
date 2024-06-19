@@ -28,5 +28,5 @@ export async function GET() {
       },
     });
   }
-  return NextResponse.redirect("http://https://airbnb-clone-pdiq.vercel.app");
+  return NextResponse.redirect("http://airbnb-clone-pdiq.vercel.app");
 }
