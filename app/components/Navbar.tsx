@@ -20,9 +20,6 @@ export default function Navbar() {
             className="w-12 block lg:hidden"
           />
         </Link>
-        <div className="rounded-full border px-5 py-2">
-          <h2>Hello from search</h2>
-        </div>
         <UserNav />
       </div>
     </nav>
