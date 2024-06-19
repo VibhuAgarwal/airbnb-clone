@@ -61,7 +61,7 @@ export function SearchModalComponent() {
               <DialogHeader>
                 <DialogTitle>Select a country</DialogTitle>
                 <DialogDescription>
-                  Please choose a country so that we know where you want to go!
+                  Please choose a country so that we know where you want to go!!
                 </DialogDescription>
               </DialogHeader>
               <Select
