@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import { CategoryShowcase } from "@/app/components/CategoryShowcase";
 import { HomeMap } from "@/app/components/HomeMap";
+import { SelectCalender } from "@/app/components/SelectCalender";
 import prisma from "@/app/lib/db";
 import { useCountries } from "@/app/lib/getCountries";
 import { Separator } from "@/components/ui/separator";
@@ -93,6 +94,7 @@ export default async function HomeRoute({
           <Separator className="my-7" />
           <HomeMap locationValue={country?.value as string} />
         </div>
+        <SelectCalender />
       </div>
     </div>
   );
