@@ -6,6 +6,7 @@ import prisma from "./lib/db";
 import { SkeletonCard } from "./components/SkeletonCard";
 import { NoItems } from "./components/NoItems";
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
+import { revalidatePath } from "next/cache";
 
 async function getData({
   searchParams,
@@ -14,6 +15,10 @@ async function getData({
   userId: string | undefined;
   searchParams?: {
     filter?: string;
+    country?: string;
+    guest?: string;
+    room?: string;
+    bathroom?: string;
   };
 }) {
   const data = await prisma.home.findMany({
@@ -22,6 +27,10 @@ async function getData({
       addedCategory: true,
       addedLocation: true,
       categoryName: searchParams?.filter ?? undefined,
+      country: searchParams?.country ?? undefined,
+      guests: searchParams?.guest ?? undefined,
+      bedrooms: searchParams?.room ?? undefined,
+      bathrooms: searchParams?.bathroom ?? undefined,
     },
     select: {
       photo: true,
@@ -37,6 +46,7 @@ async function getData({
     },
   });
   return data;
+  revalidatePath("/");
 }
 
 export default function Home({
@@ -44,6 +54,10 @@ export default function Home({
 }: {
   searchParams?: {
     filter?: string;
+    country?: string;
+    guest?: string;
+    room?: string;
+    bathroom?: string;
   };
 }) {
   return (
@@ -61,6 +75,10 @@ async function ShowItems({
 }: {
   searchParams?: {
     filter?: string;
+    country?: string;
+    guest?: string;
+    room?: string;
+    bathroom?: string;
   };
 }) {
   const { getUser } = getKindeServerSession();
