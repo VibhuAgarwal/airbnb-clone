@@ -28,5 +28,5 @@ export async function GET() {
       },
     });
   }
-  return NextResponse.redirect("https://airbnb-clone-ten-tawny.vercel.app/");
+  return NextResponse.redirect("https://airbnb-clone-ten-tawny.vercel.app");
 }
